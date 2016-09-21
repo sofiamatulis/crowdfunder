@@ -28,7 +28,6 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-    @user = current_user
     @project = @user.owned_projects.new(project_params)
     #@project = Project.new(project_params)
 
