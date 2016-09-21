@@ -30,12 +30,6 @@
   <%= @project.description %>
 </p>
 
-<% if current_user != nil %>
-<% if current_user.id == @project.user_id %>
-
-<%= link_to 'Edit', edit_project_path(@project) %>  |
-<% end %>
-<% end %>
-
+<%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
 <%= link_to 'Create pledge', new_project_pledge_path(@project) %>

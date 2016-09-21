@@ -71,6 +71,15 @@ class ProjectsController < ApplicationController
     # end
   end
 
+  def search
+    @projects = Project.all
+    if params[:search]
+      @projects = Project.search(params[:search]).order("created_at DESC")
+    else
+      @projects = Project.all.order('created_at DESC')
+    end
+  end
+
   # DELETE /projects/1
   # DELETE /projects/1.json
   def destroy
