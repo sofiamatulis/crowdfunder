@@ -1,0 +1,5 @@
+class ChangeProjectAmout < ActiveRecord::Migration[5.0]
+  def change
+    remove_column :projects, :amount
+  end
+end
