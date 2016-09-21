@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :set_user
 
   # GET /projects
   # GET /projects.json
@@ -26,7 +27,9 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-    @project = Project.new(project_params)
+    @user = current_user
+    @project = @user.owned_projects.new(project_params)
+    #@project = Project.new(project_params)
 
     if @project.save
       flash[:sucess] = 'New Project succesfully added to Crowfunder'
@@ -82,6 +85,9 @@ class ProjectsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def set_user
+      @user =  current_user
+    end
     def set_project
       @project = Project.find(params[:id])
     end
