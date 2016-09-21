@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  date: 2016-09-21 15:31:21
+  goal: 1
+  user: one
+  category: one
+  description: MyText
+
+two:
+  name: MyString
+  date: 2016-09-21 15:31:21
+  goal: 1
+  user: two
+  category: two
+  description: MyText
