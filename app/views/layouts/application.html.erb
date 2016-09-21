@@ -9,6 +9,31 @@
   </head>
 
   <body>
+  <div>
+    <span class = "userinfo">
+         <% if current_user %>
+           <span id = "welcome-message"> Signed in as <%= link_to "#{current_user.name}", user_path(current_user) %></span> |
+           <span id = "log-out-button"><%= link_to "Log out", session_path("current"), :method => :delete %></span>
+         <% else %>
+           <span id = "log-in-button"><%= link_to "Log In", new_session_path %></span> |
+           <span id = "sign-up-button"><%= link_to "Sign Up", new_user_path %></span>
+         <% end %>
+     </span>
+  </div>
+
+
+    <% if flash[:notice] %>
+      <p id="notice"><%= flash[:notice] %></p>
+    <% end %>
+
+    <% if flash[:alert] %>
+      <p id="alert"><%= flash[:alert] %></p>
+    <% end %>
+
+
     <%= yield %>
+
+
+
   </body>
 </html>
