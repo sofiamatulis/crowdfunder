@@ -29,6 +29,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
 
     if @project.save
+      flash[:sucess] = 'New Project succesfully added to Crowfunder'
       redirect_to project_url(@project)
     else
       render :new
@@ -50,6 +51,7 @@ class ProjectsController < ApplicationController
 
     @project.update_attributes(project_params)
     if @project.save
+      flash[:sucess] = 'Project successfully Updated'
       redirect_to project_url(@project)
     else
       render :edit
@@ -70,6 +72,8 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1.json
   def destroy
     @project.destroy
+    flash[:notice] = "Project is destroyed"
+    redirect_to projects_url
     # respond_to do |format|
     #   format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
     #   format.json { head :no_content }
