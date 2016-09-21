@@ -30,5 +30,11 @@
   <%= @project.description %>
 </p>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
+<% if current_user != nil %>
+<% if current_user.id == @project.user_id %>
+
+<%= link_to 'Edit', edit_project_path(@project) %>  |
+<% end %>
+<% end %>
+
 <%= link_to 'Back', projects_path %>
