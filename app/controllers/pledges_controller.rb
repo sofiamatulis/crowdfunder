@@ -1,12 +1,15 @@
 class PledgesController < ApplicationController
   def new
     @pledge = Pledge.new
+    @project = Project.find(params[:project_id])
+
   end
 
   def create
-    @pledge = Pledge.new(pledge_params)
-    @pledge.user = current_user
-    @pledge.project = Project.find(params[:id])
+    @user = current_user
+    @project = Project.find(params[:project_id])
+    @pledge = @project.pledges.new(pledge_params)
+    @pledge.user = @user
     if @pledge.save
       redirect_to project_path(@pledge.project), :notice => 'it worked'
     else

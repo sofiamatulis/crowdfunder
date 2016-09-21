@@ -1,2 +1,24 @@
-<h1>Pledges#new</h1>
-<p>Find me in app/views/pledges/new.html.erb</p>
+<h1>New Pledge </h1>
+<%= form_for [@project,@pledge] do |f| %>
+  <% if @pledge.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pledge.errors.count, "error") %> prohibited this pledge from being saved:</h2>
+
+      <ul>
+      <% pledge.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :amount %>
+    <%= f.number_field :amount %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
