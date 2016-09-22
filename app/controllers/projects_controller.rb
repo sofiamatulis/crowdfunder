@@ -27,6 +27,7 @@ class ProjectsController < ApplicationController
   def show
     @pledge = Pledge.new
     @project = Project.find(params[:id])
+    @count = Pledge.count(@project)
 
   end
 
