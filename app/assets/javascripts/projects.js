@@ -1,21 +1,5 @@
 $(function() {
 
-  $('.pledge-btn').on('click', function(button){
-    button.preventDefault();
-
-  var id = $(this).attr("id");
-  $.ajax({
-    url: id+'/pledges/new',
-    method: 'GET',
-    data: {},
-    dataType: 'html'
-  }).done(function(responseData){
-    $('#pledge-form').append(responseData);
-    $('.pledge-btn').remove();
-  });
-});
-
-
   // this ajax request will get the information from categories json file
   $('.category').on('click', function(event){
     var categoryId = $(this).attr("value")
