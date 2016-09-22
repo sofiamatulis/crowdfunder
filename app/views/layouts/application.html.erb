@@ -5,13 +5,14 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   </head>
 
   <body>
+    <span id = "logo">
     <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -19,9 +20,10 @@
         <i class="fa fa-money" aria-hidden="true"></i>
         &nbsp;CROWFUNDER
       </a>&nbsp;&nbsp;&nbsp;
+        </span>
       <span class = "navbar-text">
            <% if current_user %>
-             <span id = "welcome-message"> Signed in as <%= link_to "#{current_user.name}", user_path(current_user) %></span> |
+             <span id = "welcome-message" class = "<%= current_user.id  %>"> Signed in as <%= link_to "#{current_user.name}", user_path(current_user) %></span> |
              <span id = "log-out-button"><%= link_to "Log out", session_path("current"), :method => :delete %></span>
            <% else %>
              <span id = "log-in-button"><%= link_to "Log In", new_session_path %></span> |
@@ -38,11 +40,11 @@
 
 
     <% if flash[:notice] %>
-      <p id="notice"><%= flash[:notice] %></p>
+    <div class="alert alert-info" role="alert"><%= flash[:notice] %></div>
     <% end %>
 
     <% if flash[:alert] %>
-      <p id="alert"><%= flash[:alert] %></p>
+    <div class="alert alert-danger" role="alert"><%= flash[:alert] %></div>
     <% end %>
 
 

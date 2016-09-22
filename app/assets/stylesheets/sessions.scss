@@ -1,3 +1,90 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.log-in-form{
+  margin:auto;
+  margin-top: 8%;
+  margin-bottom: 70px;
+  width: 300px;
+  padding: 50px 30px;
+  // background-color: rgba(0, 0, 0, 0.6);
+  background-color:#77D9C4;
+  opacity: 0.8;
+
+
+}
+
+.sign-up{
+  background-image: url('signin.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+.field input{
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 13px;
+  line-height: 18px;
+  font-family: 'Muli', sans-serif;
+
+}
+
+
+.header{
+  font-size: 30px;
+  font-family: 'Playfair Display', serif;
+  color:#ffffff;
+  text-align: center;
+  padding-bottom: 10px;
+  text-transform:uppercase;
+}
+
+
+.field input{
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 13px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.field {
+  text-align:center;
+}
+
+.actions {
+  text-align: center;
+}
+
+.log-in{
+  background-image: url('signin.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.header {
+
+text-align:center;
+font-family: 'Muli', sans-serif;
+// color:gray;
+color:#015249;
+}
+
+.navbar-default {
+  background-color:#77c9d4;
+}
+
+
+.sign-up-form{
+  margin:auto;
+  margin-top: 8%;
+  margin-bottom: 70px;
+  width: 300px;
+  padding: 50px 30px;
+  background-color: rgba(0, 0, 0, 0.6);
+}

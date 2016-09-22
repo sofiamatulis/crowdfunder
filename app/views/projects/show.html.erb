@@ -1,22 +1,25 @@
-<p id="notice"><%= notice %></p>
+<%= link_to 'Back to Projects', projects_path %>
+<% if current_user %>
+| <%= link_to 'Edit Current Project', edit_project_path(@project) %>
+<% end %>
 
+
+<h1><%= @project.name %></h1>
+<strong><%= Project.get_countdown_time(@project) %></strong>
+
+<div class='thumbnail'>
 <p>
-  <strong>Name:</strong>
-  <%= @project.name %>
+  <strong>Project Started:</strong>
+  <%= @project.date %></br>
 </p>
 
 <p>
-  <strong>Date:</strong>
-  <%= @project.date %>
-</p>
-
-<p>
-  <strong>Goal:</strong>
+  <strong>Fund Goal:</strong>
   <%= @project.goal %>
 </p>
 
 <p>
-  <strong>User:</strong>
+  <strong>Project Creater:</strong>
   <%= @project.user.name %>
 </p>
 
@@ -29,7 +32,9 @@
   <strong>Description:</strong>
   <%= @project.description %>
 </p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
-<%= link_to 'Create pledge', new_project_pledge_path(@project) %>
+</div>
+<%= link_to 'Create pledge', new_project_pledge_path(@project), class: 'btn btn-success pledge-btn',remote: true, id: @project.id %>
+<div id="pledge-form"></div>
+<div id= 'pledge' </div>
+<!-- Temp fix adding reloading js as Js not loading properly when clicked her via show -->
+<%# javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>

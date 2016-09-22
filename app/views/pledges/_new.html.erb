@@ -1,11 +1,11 @@
-<h1>New Pledge </h1>
-<%= form_for [@project,@pledge] do |f| %>
+<h1>form for New Pledge </h1>
+<%= form_for [@project, @pledge] , remote: true do |f| %>
   <% if @pledge.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(pledge.errors.count, "error") %> prohibited this pledge from being saved:</h2>
+      <h2><%= pluralize(@pledge.errors.count, "error") %> prohibited this pledge from being saved:</h2>
 
       <ul>
-      <% pledge.errors.full_messages.each do |message| %>
+      <% @pledge.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -19,6 +19,6 @@
 
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'submit-btn' %>
   </div>
 <% end %>

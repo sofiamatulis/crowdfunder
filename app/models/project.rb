@@ -4,6 +4,14 @@ class Project < ApplicationRecord
   has_many :users, through: :pledges
   has_many :pledges
   validates :name, :date, :goal, :description, presence: true
+
+
+  def self.search(search)
+  where("name LIKE ?", "%#{search}%")
+
+end
+
+
 end
 
 def self.index(search)
