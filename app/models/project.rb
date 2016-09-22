@@ -8,8 +8,17 @@ class Project < ApplicationRecord
 
   def self.search(search)
   where("name LIKE ?", "%#{search}%")
+  end
 
-end
+  def count(project)
+    Pledge.where(project_id: project.id)
+    count = 0
+    pledge.each do |pledge|
+      count += pledge.amount
+    end
+    return count
+
+  end
 
 
 end
