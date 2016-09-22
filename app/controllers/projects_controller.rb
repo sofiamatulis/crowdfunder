@@ -28,7 +28,7 @@ class ProjectsController < ApplicationController
     @pledge = Pledge.new
     @project = Project.find(params[:id])
     @count = Pledge.count(@project)
-
+    @rewards = Reward.find_rewards(@project.id)
   end
 
   # GET /projects/new
