@@ -1,3 +1,16 @@
 // Place all the styles related to the Projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+html {
+    background-image: url('crowd.png');
+}
+
+
+#title {
+  text-align:center;
+  font-family: 'Muli', sans-serif;
+  // color:gray;
+  color:#015249;
+}
