@@ -1,10 +1,7 @@
 class PledgesController < ApplicationController
   def new
-    @pledge = Pledge.new
     @project = Project.find(params[:project_id])
-    respond_to do |format|
-      format.html {render partial: 'new'}
-    end
+    @pledge = Pledge.new
   end
 
   def create
@@ -13,7 +10,7 @@ class PledgesController < ApplicationController
     @pledge = @project.pledges.new(pledge_params)
     @pledge.user = @user
     if @pledge.save
-      redirect_to project_path(@project), :notice => 'it worked'
+      redirect_to project_path(@project), :notice => "#{@pledge.amount} was successfully submitted to #{@project.name}"
     else
       render :new
     end

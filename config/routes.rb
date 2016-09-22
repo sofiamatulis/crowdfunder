@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root "projects#index"
   resources :projects do
-    resources :pledges, only: [:new]
+    resources :pledges, only: [:new, :create]
   end
   resources :categories, only: [:show]
   resources :users, only: [:show, :new, :create]
