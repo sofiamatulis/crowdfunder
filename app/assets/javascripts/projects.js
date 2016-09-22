@@ -3,12 +3,13 @@ $(document).ready(function() {
     button.preventDefault();
   var id = $(this).attr("id");
   $.ajax({
-    url: 'projects/'+id+'/pledges/new',
+    url: id+'/pledges/new',
     method: 'GET',
     data: {},
     dataType: 'html'
   }).done(function(responseData){
-    responseData.appendTo($('#pledge-form'));
+    $('#pledge-form').append(responseData);
+    $('.pledge-btn').remove();
   })
 });
 
