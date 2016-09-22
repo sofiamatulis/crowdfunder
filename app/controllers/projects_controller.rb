@@ -29,8 +29,9 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @rewards = Reward.find_rewards(@project.id)
     @rewards.each do |reward|
-      puts " this is the rewards: #{@reward}"
+
     end
+    @count = Pledge.count(@project)
   end
 
   # GET /projects/new

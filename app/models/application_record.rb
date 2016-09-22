@@ -40,4 +40,19 @@ class ApplicationRecord < ActiveRecord::Base
   end
 
 
+  def self.count(project)
+    pledges= self.where(project_id: project.id)
+    count = 0
+    pledges.each do |pledge|
+      puts pledge
+      count += pledge.amount
+    end
+    return count
+
+  end
+  
+  def self.find_rewards(project_id)
+     self.where(project_id: project_id)
+   end
+
 end
