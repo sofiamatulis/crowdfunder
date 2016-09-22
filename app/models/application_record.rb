@@ -39,6 +39,7 @@ class ApplicationRecord < ActiveRecord::Base
     end
   end
 
+
   def self.count(project)
     pledges= self.where(project_id: project.id)
     count = 0
