@@ -13,7 +13,7 @@ class ApplicationRecord < ActiveRecord::Base
     day_difference = due_date[3,2].to_i - current_time[3,2].to_i
     month_difference = due_date[0,2].to_i - current_time[0,2].to_i
 
-    if (year_difference) < 0
+    if (year_difference <= 0) && (month_difference <= 0) && day_difference <= 0
       return 'The Project is Expired'
     end
 
