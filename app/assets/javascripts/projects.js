@@ -35,6 +35,11 @@ $(function() {
   // Calculation for progressbar
 
   $('.progressbar').load(function(){
+    var funded = parseInt($('#fund').text());
+    var goal   = parseInt($('#goal').text());
+    var final  = ( funded / goal) * 100;
+
+    $('.progressbar').attr('aria-valuenow', final);
 
   })
 });
