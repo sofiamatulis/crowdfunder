@@ -1,12 +1,18 @@
+<body class="people">
 <p id="notice"><%= notice %></p>
 
-<h1>Current Crowfunder Projects</h1>
+<h1 id="title">Current Projects</h1>
 
-<h1>Projects</h1>
-<table>
+
+
+
+
+
+<table class="name">
   <thead>
     <tr>
       <th>Name</th>
+      <br>
       <th>Date</th>
       <th>Goal</th>
       <th>User</th>
@@ -49,4 +55,6 @@
 
 <br>
 
+
 <%= link_to 'New Project', new_project_path, class: 'btn btn-default btn-sm'%>
+</body>

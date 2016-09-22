@@ -1,3 +1,97 @@
 // Place all the styles related to the Projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.people {
+    background-image: url('crowd.png');
+}
+
+
+#title {
+  text-align:center;
+  font-family: 'Muli', sans-serif;
+  // color:gray;
+  color:#015249;
+}
+
+
+.search {
+  text-align: center;
+    font-family: 'Muli', sans-serif;
+    margin-left: -400px;
+}
+//
+// .name {
+//   text-align:center;
+//   font-family: 'Muli', sans-serif;
+//   // color:gray;
+//   color:#015249;
+//   width:100%;
+//   display:inline-block;
+//   position:relative;
+//   margin-left: 300px;
+//
+// }
+//
+//
+//
+//
+//
+//
+// .name {
+//   position: relative;
+//   margin: 15px;
+// }
+//
+// tr {
+//   position: relative;
+//   list-style: none;
+//   overflow: hidden;
+//   // width: 350px;
+//     width:100%;
+//   height: 300px;
+//   display: inline-block;
+//   margin: 5px, 0, 5px, 0;
+//   font-family: 'Muli', sans-serif;
+//
+// }
+//
+//
+// tr {
+//   text-align:center;
+//   // color:gray;
+//   color:#015249;
+//
+//
+// }
+//
+// th {
+//   text-align: center;
+//   height:50px;
+// }
+//
+//
+//
+//
+// h1 {
+//   text-align:center;
+//   font-family: 'Muli', sans-serif;
+//   // color:gray;
+//   color:#015249;
+// }
+
+.thumbnail {
+  text-align:center;
+}
+
+#clickpledge {
+  text-align:center;
+}
+
+
+#expire {
+  text-align:center;
+  color:red;
+}
