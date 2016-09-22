@@ -39,4 +39,12 @@ class ApplicationRecord < ActiveRecord::Base
     end
   end
 
+  def self.find_rewards(project_id)
+    self.where(project_id: project_id)
+  end
+
+
+
+
+
 end

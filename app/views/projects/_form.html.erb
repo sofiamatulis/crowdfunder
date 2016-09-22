@@ -41,9 +41,20 @@
     <%= f.select :category_id,  options_for_select(@categories.collect{ |n| [n.name, n.id] }), :prompt => 'Select One' %>
   </div>
 
-  <div class="actions"><br/>
+
+    <%= f.fields_for :rewards, @reward do |reward_fields| %>
+      <div class = "field"><%= reward_fields.label :amount %>
+        <%= reward_fields.number_field :amount %>
+      </div>
+      <div class = "field"><%= reward_fields.label :description %>
+        <%= reward_fields.text_field :description %>
+      </div>
+    <% end %>
+
+    <div class="actions"><br/>
     <%= f.submit class: 'btn btn-default'%>
-  </div>
+    </div>
+
 <% end %>
 </body>
 </div>
