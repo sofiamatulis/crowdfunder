@@ -1,3 +1,45 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.log-in-form{
+  margin:auto;
+  margin-top: 8%;
+  margin-bottom: 70px;
+  width: 300px;
+  padding: 50px 30px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+.field input{
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+
+.header{
+  font-size: 30px;
+  font-family: 'Playfair Display', serif;
+  color:#ffffff;
+  text-align: center;
+  padding-bottom: 10px;
+  text-transform:uppercase;
+}
+
+
+.field input{
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.log-in{
+  background-image: url('signin.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
