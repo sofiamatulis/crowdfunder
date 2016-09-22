@@ -2,6 +2,9 @@ class PledgesController < ApplicationController
   def new
     @pledge = Pledge.new
     @project = Project.find(params[:project_id])
+    respond_to do |format|
+      format.html {render partial: 'new'}
+    end
   end
 
   def create
