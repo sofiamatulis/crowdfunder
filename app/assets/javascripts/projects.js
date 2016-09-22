@@ -39,9 +39,13 @@ $(function() {
         $('<td>').attr('class', 'name').html(data[i]['description']).appendTo('.categories-table')
         $('<br>').appendTo('.categories-table')
       };
-
-
-    })
+    }).fail(function(){
+      console.log('this didnt work')
+    });
+    $('.all-categories').on('click', function(event){
+      $('.categories-table').html("")
+      $('.all-projects-table-body').attr('style',"display")
+    });
   });
 
 });
