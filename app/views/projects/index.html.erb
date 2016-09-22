@@ -1,20 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<header class="mainHeader">
-    <nav>
-      <ul>
-      <button class = 'all-categories'> All Categories</button>
-      <% @categories.each_with_index do |category,index| %>
-        <button class = 'category' value = "<%= index + 1 %>" ><%= category.name %> </button>
-      <% end %>
-      </ul>
-    </nav>
-</header>
-
-
-
 <h1>Current Crowfunder Projects</h1>
-
 
 <h1>Projects</h1>
 <table>
@@ -36,21 +22,26 @@
       <span class="actions"><%= submit_tag "Search", class: 'btn btn-default btn-sm'%></span>
     <% end %>
 
+    <section class="pull-right">
+      <strong>Category: </strong>
+    <% @categories.each_with_index do |category,index| %>
+      <button class = 'category btn btn-default btn-sm' value = "<%= index + 1 %>" ><%= category.name %> </button>
+    <% end %>
+</section>
+
   <tbody class = 'categories-table'>
   </tbody>
 
   <tbody class = "all-projects-table-body">
     <% @projects.each do |project| %>
       <tr>
-        <td><%= project.name %></td>
+        <td><%= link_to "#{project.name}", edit_project_path(project)%></td>
         <td><%= project.date %></td>
         <td><%= project.goal %></td>
         <td><%= project.user.name %></td>
         <td><%= project.category.name %></td>
         <td><%= project.description %></td>
-        <!-- <td><#%= link_to 'Show', project %></td>
-        <td><#%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><#%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+
       </tr>
     <% end %>
   </tbody>
@@ -58,4 +49,4 @@
 
 <br>
 
-<%= link_to 'New Project', new_project_path %>
+<%= link_to 'New Project', new_project_path, class: 'btn btn-default btn-sm'%>
