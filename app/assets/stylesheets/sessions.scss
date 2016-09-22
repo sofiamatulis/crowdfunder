@@ -34,6 +34,15 @@
   border: none;
   font-size: 13px;
   line-height: 18px;
+  text-align: center;
+}
+
+.field {
+  text-align:center;
+}
+
+.actions {
+  text-align: center;
 }
 
 .log-in{
@@ -42,4 +51,9 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+}
+
+.log {
+
+text-align:center;
 }
