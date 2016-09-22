@@ -1,6 +1,8 @@
-$(document).ready(function() {
+$(function() {
+
   $('.pledge-btn').on('click', function(button){
     button.preventDefault();
+
   var id = $(this).attr("id");
   $.ajax({
     url: id+'/pledges/new',
@@ -10,7 +12,7 @@ $(document).ready(function() {
   }).done(function(responseData){
     $('#pledge-form').append(responseData);
     $('.pledge-btn').remove();
-  })
+  });
 });
 
 
