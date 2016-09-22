@@ -7,7 +7,7 @@
 
 <h1><%= @project.name %></h1>
 
-
+<div class='thumbnail'>
 <p>
   <strong>Date:</strong>
   <%= @project.date %></br>
@@ -33,6 +33,7 @@
   <strong>Description:</strong>
   <%= @project.description %>
 </p>
+</div>
 <%= link_to 'Create pledge', new_project_pledge_path(@project), class: 'btn btn-success pledge-btn',id: @project.id %>
-
+<div class='container' id='pledge-form'></div>
 <!-- <button class='btn btn-success' id='pledge-btn'>Pledge to Project</button> -->
