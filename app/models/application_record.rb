@@ -7,13 +7,13 @@ class ApplicationRecord < ActiveRecord::Base
 
   def self.get_countdown_time(project)
     current_time = (Time.new).strftime('%m-%d-%y')
-    due_date = self.get_due_date(project)[15,9]
+    due_date = self.return_due_date(project)[15,9]
 
     year_difference = due_date[6,2].to_i - current_time[6,2].to_i
     day_difference = due_date[3,2].to_i - current_time[3,2].to_i
     month_difference = due_date[0,2].to_i - current_time[0,2].to_i
 
-    if (year_difference) <= 0
+    if (year_difference) < 0
       return 'The Project is Expired'
     end
 
@@ -26,9 +26,9 @@ class ApplicationRecord < ActiveRecord::Base
       months_left = (month_difference) - 1
       days_left = (day_difference) + 30
       return "the Project has #{months_left} months and #{days_left} days left"
-      
+
     elsif (year_difference ) >= 1 && day_difference >= 0
-      months_left = (month_difference) + (12 * year_difference) 
+      months_left = (month_difference) + (12 * year_difference)
       days_left = (day_difference)
       return "the Project has #{months_left} months and #{days_left} days left"
 

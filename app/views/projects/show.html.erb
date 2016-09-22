@@ -5,12 +5,13 @@
 <% end %>
 
 
-  <h1><%= @project.name %></h1>
+<h1><%= @project.name %></h1>
 
 
 <p>
   <strong>Date:</strong>
-  <%= @project.date %>
+  <%= @project.date %></br>
+  <strong><%= Project.get_countdown_time(@project) %></strong>
 </p>
 
 <p>
