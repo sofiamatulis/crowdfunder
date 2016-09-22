@@ -1,5 +1,8 @@
 <body class="picture">
 
+  <body class = "log-in">
+    <div class="log-in-form">
+
 <%= form_for(project) do |f| %>
   <% if project.errors.any? %>
     <div id="error_explanation">
@@ -42,5 +45,7 @@
     <%= f.submit class: 'btn btn-default'%>
   </div>
 <% end %>
+</body>
+</div>
 
 </body>
