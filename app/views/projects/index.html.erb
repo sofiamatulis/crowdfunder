@@ -3,6 +3,7 @@
 <header class="mainHeader">
     <nav>
       <ul>
+      <button class = 'all-categories'> All Categories</button>
       <% @categories.each_with_index do |category,index| %>
         <button class = 'category' value = "<%= index + 1 %>" ><%= category.name %> </button>
       <% end %>
