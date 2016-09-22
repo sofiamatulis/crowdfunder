@@ -5,13 +5,21 @@ class ProjectsController < ApplicationController
 
   # GET /projects
   # GET /projects.json
+
   def index
     @projects = Project.all
+    @categories = Category.all
+    # @categories_projects = {}
+    # @categories.each do |category|
+    #   @categories_projects[category] = []
+    # end
+
+
     if params[:search]
- @projects = Project.search(params[:search]).order("created_at DESC")
-else
- @projects = Project.all.order('created_at DESC')
-end
+      @projects = Project.search(params[:search]).order("created_at DESC")
+    else
+      @projects = Project.all.order('created_at DESC')
+    end
   end
 
   # GET /projects/1
