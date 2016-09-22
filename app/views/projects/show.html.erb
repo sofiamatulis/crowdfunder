@@ -36,5 +36,13 @@
 <%= link_to 'Create pledge', new_project_pledge_path(@project), class: 'btn btn-success pledge-btn',remote: true, id: @project.id %>
 <div id="pledge-form"></div>
 <div id= 'pledge' </div>
-<!-- Temp fix adding reloading js as Js not loading properly when clicked her via show -->
-<%# javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+<% @rewards.each do |reward| %>
+  <%= reward.amount %>
+<% end %>
+
+
+
+
+
+

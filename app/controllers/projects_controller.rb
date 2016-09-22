@@ -27,12 +27,16 @@ class ProjectsController < ApplicationController
   def show
     @pledge = Pledge.new
     @project = Project.find(params[:id])
-
+    @rewards = Reward.find_rewards(@project.id)
+    @rewards.each do |reward|
+      puts " this is the rewards: #{@reward}"
+    end
   end
 
   # GET /projects/new
   def new
     @project = Project.new
+    @reward = Reward.new
   end
 
   # GET /projects/1/edit
