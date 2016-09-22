@@ -15,6 +15,12 @@
     </tr>
   </thead>
 
+  <div class="search">
+    <%= form_tag(projects_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search by Name" %>
+      <span class="actions"><%= submit_tag "Search" %></span>
+    <% end %>
+
   <tbody>
     <% @projects.each do |project| %>
       <tr>
