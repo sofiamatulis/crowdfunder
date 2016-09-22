@@ -26,11 +26,15 @@ $(function() {
     }).fail(function(){
       console.log('this didnt work')
     });
-    $('.all-categories').on('click', function(event){
+      $('.all-categories').on('click', function(event){
       $('.categories-table').html("")
       $('.all-projects-table-body').attr('style',"display")
     });
 
   });
+  // Calculation for progressbar
 
+  $('.progressbar').load(function(){
+
+  })
 });
