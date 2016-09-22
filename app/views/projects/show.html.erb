@@ -40,43 +40,16 @@
               <strong>Description:</strong>
               <%= @project.description %>
             </p>
-            </div>
+
+
+            <p>
+              <strong>Funding:</strong>
+              <%= @count %>
+            </p>
+
           </div>
           <div class="col-md-7">
                 <h4> Funded </h4>
-
-
-<div class='thumbnail'>
-<p>
-  <strong>Project Started:</strong>
-  <%= @project.date %></br>
-</p>
-
-<p>
-  <strong>Fund Goal:</strong>
-  <%= @project.goal %>
-</p>
-
-<p>
-  <strong>Project Creater:</strong>
-  <%= @project.user.name %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @project.category.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
-
-<p>
-  <strong>Funding:</strong>
-  <%= @count %>
-</p>
-
 
               <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
