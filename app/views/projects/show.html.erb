@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 <%= link_to 'Back to Projects', projects_path %>
 <% if current_user %>
 | <%= link_to 'Edit Current Project', edit_project_path(@project) %>
@@ -36,4 +35,5 @@
 </div>
 <%= link_to 'Create pledge', new_project_pledge_path(@project), class: 'btn btn-success pledge-btn',id: @project.id %>
 <div class='container' id='pledge-form'></div>
-<!-- <button class='btn btn-success' id='pledge-btn'>Pledge to Project</button> -->
+<!-- Temp fix adding reloading js as Js not loading properly when clicked her via show -->
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
