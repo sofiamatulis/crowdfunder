@@ -12,6 +12,7 @@
   </head>
 
   <body>
+    <span id = "logo">
     <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -19,6 +20,7 @@
         <i class="fa fa-money" aria-hidden="true"></i>
         &nbsp;CROWFUNDER
       </a>&nbsp;&nbsp;&nbsp;
+        </span>
       <span class = "navbar-text">
            <% if current_user %>
              <span id = "welcome-message" class = "<%= current_user.id  %>"> Signed in as <%= link_to "#{current_user.name}", user_path(current_user) %></span> |
