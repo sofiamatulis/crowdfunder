@@ -75,12 +75,12 @@
 //
 //
 //
-// h1 {
-//   text-align:center;
-//   font-family: 'Muli', sans-serif;
-//   // color:gray;
-//   color:#015249;
-// }
+h1 {
+  text-align:center;
+  font-family: 'Muli', sans-serif;
+  // color:gray;
+  color:#015249;
+}
 
 .thumbnail {
   text-align:center;
@@ -94,4 +94,23 @@
 #expire {
   text-align:center;
   color:red;
+}
+
+
+.picture {
+  background-image: url('crowd.png');
+
+}
+
+
+.show, .thumbnail{
+  // margin:auto;
+  // margin-top: 8%;
+  // margin-bottom: 70px;
+  // width: 300px;
+  // padding: 50px 30px;
+  background-color:#77D9C4;
+  opacity: 0.8;
+
+
 }

@@ -1,4 +1,4 @@
-<div class="show">
+<body class="picture">
 
 
 <%= link_to 'Back to Projects', projects_path %>
@@ -6,6 +6,8 @@
 | <%= link_to 'Edit Current Project', edit_project_path(@project) %>
 <% end %>
 
+
+<div class="show">
 
 <h1><%= @project.name %></h1>
 <div id="expire">
@@ -46,3 +48,4 @@
 <!-- Temp fix adding reloading js as Js not loading properly when clicked her via show -->
 <%# javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </div>
+</body>

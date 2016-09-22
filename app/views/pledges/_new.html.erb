@@ -1,4 +1,6 @@
-<h1>form for New Pledge </h1>
+<div class="showpledge">
+
+<h1>New Pledge </h1>
 <%= form_for [@project, @pledge] , remote: true do |f| %>
   <% if @pledge.errors.any? %>
     <div id="error_explanation">
@@ -22,3 +24,5 @@
     <%= f.submit class: 'submit-btn' %>
   </div>
 <% end %>
+
+</div>
