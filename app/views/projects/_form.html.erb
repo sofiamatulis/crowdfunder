@@ -41,7 +41,7 @@
     <%= f.select :category_id,  options_for_select(@categories.collect{ |n| [n.name, n.id] }), :prompt => 'Select One' %>
   </div>
 
-
+    <h3>Rewards</h3>
     <%= f.fields_for :rewards, @reward do |reward_fields| %>
       <div class = "field"><%= reward_fields.label :amount %>
         <%= reward_fields.number_field :amount %>
