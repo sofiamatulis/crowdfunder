@@ -41,9 +41,20 @@
     <%= f.select :category_id,  options_for_select(@categories.collect{ |n| [n.name, n.id] }), :prompt => 'Select One' %>
   </div>
 
-  <div class="actions"><br/>
+    <h3>Rewards</h3>
+    <div id = 'rewards'>
+      <%= f.fields_for :rewards do |reward| %>
+        <%= render 'reward_fields', :f => reward  %>
+      <% end %>
+      <div class = 'links'>
+        <%= link_to_add_association 'Add Reward', f, :rewards %>
+      </div>
+    </div>
+
+    <div class="actions"><br/>
     <%= f.submit class: 'btn btn-default'%>
-  </div>
+    </div>
+
 <% end %>
 </body>
 </div>
