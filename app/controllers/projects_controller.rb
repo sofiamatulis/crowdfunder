@@ -12,6 +12,10 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @pledge = Pledge.new
+    respond_to do |format |
+      format.html {render partial: '../pledges/new', {pledge: @pledge}}
+    end
 
   end
 

@@ -32,4 +32,6 @@
   <strong>Description:</strong>
   <%= @project.description %>
 </p>
-<%= link_to 'Create pledge', new_project_pledge_path(@project), class: 'btn btn-success' %>
+<%= link_to 'Create pledge', new_project_pledge_path(@project), class: 'btn btn-success pledge-btn',id: @project.id %>
+
+<!-- <button class='btn btn-success' id='pledge-btn'>Pledge to Project</button> -->
