@@ -1,13 +1,17 @@
 <p id="notice"><%= notice %></p>
+<%= link_to 'Back to Projects', projects_path %>
+<% if current_user %>
+| <%= link_to 'Edit Current Project', edit_project_path(@project) %>
+<% end %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-</p>
+
+<h1><%= @project.name %></h1>
+
 
 <p>
   <strong>Date:</strong>
-  <%= @project.date %>
+  <%= @project.date %></br>
+  <strong><%= Project.get_countdown_time(@project) %></strong>
 </p>
 
 <p>
@@ -29,7 +33,6 @@
   <strong>Description:</strong>
   <%= @project.description %>
 </p>
+<%= link_to 'Create pledge', new_project_pledge_path(@project), class: 'btn btn-success pledge-btn',id: @project.id %>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
-<%= link_to 'Create pledge', new_project_pledge_path(@project) %>
+<!-- <button class='btn btn-success' id='pledge-btn'>Pledge to Project</button> -->
