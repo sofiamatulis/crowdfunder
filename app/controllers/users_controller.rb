@@ -4,6 +4,8 @@ class UsersController < ApplicationController
   end
   def show
     @user = current_user
+    @user_pledges = @user.pledges
+    @user_projects = @user.owned_projects
   end
   def create
     @user = User.new(user_params)

@@ -11,3 +11,59 @@
   </div>
 </div>
  <br>
+
+
+<table class = "user-projects">
+<h3><%= "#{@user.name}'s Projects"%></h3>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Goal</th>
+      <th>User</th>
+      <th>Category</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody class = "all-projects-table-body">
+    <% @user_projects.each do |project| %>
+      <tr>
+        <td><%= project.name %></td>
+        <td><%= project.date %></td>
+        <td><%= project.goal %></td>
+        <td><%= project.user.name %></td>
+        <td><%= project.category.name %></td>
+        <td><%= project.description %></td>
+        <td><%= link_to 'Show', project %></td>
+        <td><%= link_to 'Edit', edit_project_path(project) %></td>
+        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table class = "user-pledges">
+  <h3> <%= "#{@user.name}'s Pledges"%> </h3>
+  <thead>
+  <tr>
+    <th>Amount</th>
+    <th>project</th>
+    <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <% @user_pledges.each do |pledge| %>
+    <tr>
+      <td><%= pledge.amount %></td>
+      <td><%= Project.find(pledge.project_id).name %></td>
+    <% end %>
+    </tr>
+  </tbody>
+  
+</table>
+
+
+
