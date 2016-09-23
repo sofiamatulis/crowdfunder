@@ -15,15 +15,16 @@ $(function() {
     }).done(function(data){
       console.log(data);
       for(i = 0, l = data.projects.length; i < l; i++){
-        $('<tr>').appendTo('.categories-table')
-        $('<td>').attr('class', 'name').html(data.projects[i]['name']).appendTo('.categories-table')
-        $('<td>').attr('class', 'name').html(data.projects[i]['date']).appendTo('.categories-table')
-        $('<td>').attr('class', 'name').html(data.projects[i]['goal']).appendTo('.categories-table')
-        $('<td>').attr('class', 'name').html(data.users[i]['name']).appendTo('.categories-table')
-        $('<td>').attr('class', 'name').html(data.category['name']).appendTo('.categories-table')
-        $('<td>').attr('class', 'name').html(data.projects[i]['description']).appendTo('.categories-table')
-        $('<a>').attr('class', 'show-btn').attr('href', '/projects/' + (data.projects[i]['id']) ).html('Read More').appendTo('.categories-table')
-        $('<br>').appendTo('.categories-table')
+        $('<tr id="table'+i+'"">').appendTo('.categories-table')
+        $('<td>').attr('class', 'name').html(data.projects[i]['name']).appendTo('#table'+i)
+        $('<td>').attr('class', 'name').html(data.projects[i]['date']).appendTo('#table'+i)
+        $('<td>').attr('class', 'name').html(data.projects[i]['goal']).appendTo('#table'+i)
+        $('<td>').attr('class', 'name').html(data.users[i]['name']).appendTo('#table'+i)
+        $('<td>').attr('class', 'name').html(data.category['name']).appendTo('#table'+i)
+        $('<td>').attr('class', 'name').html(data.projects[i]['description']).appendTo('#table'+i)
+        $('<td>').attr('class', 'name').append($('<a>').attr('class', 'show-btn').attr('href', '/projects/' + (data.projects[i]['id'] ) ).html('Read More'))
+                                      .appendTo('#table'+i)
+        // $('<br>').appendTo('#table'+i)
       };
     }).fail(function(){
       console.log('this didnt work');
