@@ -7,8 +7,8 @@
 <% end %>
 
 <div class="container">
-
 <div class="show">
+<img id= "image" src= <%= @project.photo  %> >
 <h1><%= @project.name %></h1>
 <div id="expire">
 <strong><span id='checkStatus'><%= Project.get_countdown_time(@project) %></span></strong>
