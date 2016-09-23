@@ -73,10 +73,12 @@
 <%# javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </div>
 </body>
-<div id= 'pledge' </div>
+
 
 <% @rewards.each do |reward| %>
-  <%= reward.amount %>
+  <h3>Rewards</h3>
+  <%= "Amount: #{reward.amount}" %> <br>
+  <%= "description: #{reward.description}" %>
 <% end %>
 
 

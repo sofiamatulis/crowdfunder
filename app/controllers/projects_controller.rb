@@ -34,6 +34,7 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = Project.new
+    @project.rewards.build
     @reward = Reward.new
   end
 
@@ -48,7 +49,7 @@ class ProjectsController < ApplicationController
     @project = @user.owned_projects.new(project_params)
     #@project = Project.new(project_params)
 
-    if @project.save
+    if @project.save!
       flash[:sucess] = 'New Project succesfully added to Crowfunder'
       redirect_to project_url(@project)
     else
@@ -113,6 +114,6 @@ class ProjectsController < ApplicationController
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name, :date, :goal, :user_id, :category_id, :description)
+      params.require(:project).permit(:name, :date, :goal, :user_id, :category_id, :description, rewards_attributes:[:amount, :description, :_destroy])
     end
 end

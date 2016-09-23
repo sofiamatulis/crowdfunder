@@ -3,13 +3,13 @@
   <body class = "log-in">
     <div class="log-in-form">
 
-<%= form_for(project) do |f| %>
-  <% if project.errors.any? %>
+<%= form_for @project do |f| %>
+  <% if @project.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
       <ul>
-      <% project.errors.full_messages.each do |message| %>
+      <% @project.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -47,15 +47,14 @@
         <%= render 'reward_fields', :f => reward  %>
       <% end %>
       <div class = 'links'>
-        <%= link_to_add_association 'Add Reward', f, :rewards %>
+        <%= link_to_add_association 'add task', f, :rewards %>
       </div>
     </div>
 
-    <div class="actions"><br/>
-    <%= f.submit class: 'btn btn-default'%>
-    </div>
 
-<% end %>
+      <%= f.submit 'Save' %>
+
+  <% end %>
 </body>
 </div>
 
