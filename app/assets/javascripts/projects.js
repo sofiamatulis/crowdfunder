@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load',function() {
 
   console.log( 'INSIDE ALT DOC READY' ); /// TEMP
 
