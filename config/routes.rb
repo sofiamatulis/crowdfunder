@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   root "projects#index"
   resources :projects do
-    resources :pledges, only: [:new, :create]
-    resources :rewards
+    resources :pledges, only: [:new, :create, :destroy]
+    resources :rewards, only: [:new, :create, :destroy]
   end
   resources :categories, only: [:show]
   resources :users, only: [:show, :new, :create]
