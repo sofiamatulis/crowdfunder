@@ -20,6 +20,10 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @count = Pledge.count(@project)
     @rewards = Reward.find_rewards(@project.id)
+    if Project.reached_goal?(@project) == false
+      Pledge.destroy_pledges(@project)
+    end
+
   end
 
   def new
@@ -57,7 +61,6 @@ class ProjectsController < ApplicationController
     @project.destroy
     flash[:notice] = "Project is destroyed"
     redirect_to projects_url
-
   end
 
 
