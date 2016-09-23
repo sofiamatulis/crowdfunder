@@ -11,13 +11,13 @@
 <div class="show">
 <h1><%= @project.name %></h1>
 <div id="expire">
-<strong><%= Project.get_countdown_time(@project) %></strong>
+<strong><span id='checkStatus'><%= Project.get_countdown_time(@project) %></span></strong>
 </div>
 
             <div class='thumbnail'>
             <p>
               <strong>Project Started:</strong>
-              <%= @project.date %></br>
+              <%= @project.date.strftime("%d/%m/%y - %I:%M:%S %p") %></br>
             </p>
 
             <p>
@@ -87,11 +87,10 @@
 <div id = "comments">
 <p>
   <h3>Comments:</h3>
-<% @project.comments.each do |comment| %> 
-  <p> 
-  <%= comment.user.name %> <br>
-  <%= comment.head %> :
-  <%= comment.body %>
+<% @project.comments.each do |comment| %>
+  <p>
+  <strong> <%= comment.user.name %> : <br> </strong>
+  <%= comment.head %>
   </p>
 <% end %>
 </p>
@@ -104,4 +103,3 @@
 </div>
 
 </body>
-

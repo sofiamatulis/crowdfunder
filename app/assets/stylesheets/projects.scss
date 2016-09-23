@@ -8,6 +8,23 @@
 
 .people {
     background-image: url('crowd.png');
+    //  background-repeat: repeat-x;
+    background-position: absolute;
+    overflow:hidden;
+}
+
+#comments {
+  background-color:#77D9C4;
+  opacity: 0.8;
+
+}
+
+#clickcomment {
+  position:relative;
+}
+
+.container {
+  position:relative;
 }
 
 
@@ -157,7 +174,17 @@ h3  {
   opacity: 0.8;
 
 }
-#rew {
-  background-color:#77D9C4;
 
+
+#clickcomment
+{
+  background-color:#77D9C4;
+    opacity: 0.8;
+
+
+}
+
+.all-projects-table-body {
+  background-color:#77D9C4;
+    opacity: 0.8;
 }

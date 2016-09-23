@@ -19,8 +19,13 @@
       <button class = 'category btn btn-default btn-sm' value = "<%= index + 1 %>" ><%= category.name %> </button>
     <% end %>
 </div>
+
+
+
+
 <table class="name table">
   <thead>
+
     <tr id="styling">
       <th >Name</th>
       <br>
@@ -33,14 +38,18 @@
     </tr>
   </thead>
 
+
+
   <tbody class = 'categories-table'>
   </tbody>
+
+  <div class="blue">
 
   <tbody class = "all-projects-table-body">
     <% @projects.each do |project| %>
       <tr>
         <td><%= link_to "#{project.name}", project_path(project)%></td>
-        <td><%= project.date%></td>
+        <td><%= project.date.strftime("%d/%m/%y - %I:%M:%S %p")%></td>
         <td><%= project.goal %></td>
         <td><%= project.user.name %></td>
         <td><%= project.category.name %></td>
@@ -53,7 +62,11 @@
 
 <br>
 
+
+
+
 <% if current_user %>
 <%= link_to 'New Project', new_project_path, class: 'btn btn-default btn-lg'%>
 <% end %>
 </body>
+</div>
