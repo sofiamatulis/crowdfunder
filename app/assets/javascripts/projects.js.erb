@@ -26,7 +26,7 @@ $(function() {
         $('<br>').appendTo('.categories-table')
       };
     }).fail(function(){
-      console.log('this didnt work')
+      console.log('this didnt work');
     });
       $('.all-categories').on('click', function(event){
       $('.categories-table').html("")
@@ -37,6 +37,7 @@ $(function() {
   // Calculation for progressbar
  // console.log('hi');
   // $('.progressbar').ready(function(){
+
     var funded = parseInt($('#funded').text());
     var goal   = parseInt($('#goal').text());
     var final  = Math.floor((( funded / goal) * 100));
@@ -46,6 +47,9 @@ $(function() {
     var check  = function(){
       if (funded >= goal) {
         return "100%"
+      } else if(funded === 0){
+        $('.progress-bar').css('color', 'black');
+        return "0"
       } else {
         return ' " '+ final + '%" '
       }

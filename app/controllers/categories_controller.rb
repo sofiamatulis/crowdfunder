@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
     respond_to do |format|
       format.html
       #format.json { render json: @rest_hash_arr} # @restaurants}
-      format.json { render json: @projects} 
+      format.json { render json: @projects, local}
     end
   end
 end
