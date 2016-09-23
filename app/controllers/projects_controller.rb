@@ -58,6 +58,7 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
+    Pledge.where(project_id: @project.id).destroy_all
     @project.destroy
     flash[:notice] = "Project is destroyed"
     redirect_to projects_url
