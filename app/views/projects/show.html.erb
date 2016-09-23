@@ -65,14 +65,33 @@
 <div id="pledge-form"></div>
 <div id= 'pledge'> </div>
 </div>
-<!-- Temp fix adding reloading js as Js not loading properly when clicked her via show -->
-<%# javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-</div>
-</body>
-
-
+<div id = 'rewards'>
 <% @rewards.each do |reward| %>
   <h3>Rewards</h3>
   <%= "Amount: #{reward.amount}" %> <br>
   <%= "description: #{reward.description}" %>
 <% end %>
+</div>
+
+<div id = "comments">
+<p>
+  <h3>Comments:</h3>
+<% @project.comments.each do |comment| %> 
+  <p> 
+  <%= comment.user.name %> <br>
+  <%= comment.head %> :
+  <%= comment.body %>
+  </p>
+<% end %>
+</p>
+</div>
+
+<div id="clickcomment">
+<%= link_to 'Add a comment', new_project_comments_path(@project), class: 'btn btn-success comment-btn',remote: true, id: @project.id %>
+<div id="comment-form"></div>
+
+</div>
+
+</body>
+
+
