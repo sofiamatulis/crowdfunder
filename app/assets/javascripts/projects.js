@@ -48,11 +48,14 @@ $(document).on('turbolinks:load',function() {
     var check  = function(){
       if (funded >= goal) {
         return "100%"
-      } else if(funded === 0){
+      } else if(funded == 0){
         $('.progress-bar').css('color', 'black');
         return "0"
       } else {
-        return ' " '+ final + '%" '
+        $('.progress-bar').css('color', 'black');
+
+        return ''+ final + '% '
+
       }
     }
     // console.log(check());
