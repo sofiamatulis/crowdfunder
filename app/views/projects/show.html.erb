@@ -17,7 +17,7 @@
             <div class='thumbnail'>
             <p>
               <strong>Project Started:</strong>
-              <%= @project.date %></br>
+              <%= @project.date.strftime("%d/%m/%y - %I:%M:%S %p") %></br>
             </p>
 
             <p>
