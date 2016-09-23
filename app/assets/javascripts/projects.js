@@ -65,5 +65,8 @@ $(document).on('turbolinks:load',function() {
     $('.progress-bar').text(check());
 
 
+     if ($('#checkStatus').text() === 'The Project is Expired'){
+       $('#clickpledge').remove();
+     }
   // })
 });
