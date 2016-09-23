@@ -19,7 +19,7 @@ $(function() {
         $('<td>').attr('class', 'name').html(data.projects[i]['name']).appendTo('#table'+i)
         $('<td>').attr('class', 'name').html(data.projects[i]['date']).appendTo('#table'+i)
         $('<td>').attr('class', 'name').html(data.projects[i]['goal']).appendTo('#table'+i)
-        $('<td>').attr('class', 'name').html(data.users[i]['name']).appendTo('#table'+i)
+        $('<td>').attr('class', 'name').html(data.users[data.projects[i].user_id - 1]['name']).appendTo('#table'+i)
         $('<td>').attr('class', 'name').html(data.category['name']).appendTo('#table'+i)
         $('<td>').attr('class', 'name').html(data.projects[i]['description']).appendTo('#table'+i)
         $('<td>').attr('class', 'name').append($('<a>').attr('class', 'show-btn').attr('href', '/projects/' + (data.projects[i]['id'] ) ).html('Read More'))
