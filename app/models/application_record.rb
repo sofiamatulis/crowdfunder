@@ -55,7 +55,7 @@ class ApplicationRecord < ActiveRecord::Base
     end
     return count
   end
-  
+
   def self.find_rewards(project_id)
     self.where(project_id: project_id)
   end
@@ -74,9 +74,3 @@ class ApplicationRecord < ActiveRecord::Base
 
 
 end
-
-
-
-
-
-
