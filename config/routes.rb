@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :projects do
     resources :pledges, only: [:new, :create, :destroy]
     resources :rewards, only: [:new, :create, :destroy]
+    resource :comments, only: [:create, :new]
   end
   resources :categories, only: [:show]
   resources :users, only: [:show, :new, :create]
