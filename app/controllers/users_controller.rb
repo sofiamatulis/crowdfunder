@@ -6,6 +6,14 @@ class UsersController < ApplicationController
     @user = current_user
     @user_pledges = @user.pledges
     @user_projects = @user.owned_projects
+    projects = Project.all
+    @rewards = []
+    @rewards_hash = Project.user_rewards(@user, projects)
+    @rewards_hash.each do |key,value|
+      if key == @user.id
+        @rewards << value
+      end
+    end
   end
   def create
     @user = User.new(user_params)

@@ -11,7 +11,22 @@
     //  background-repeat: repeat-x;
     background-position: absolute;
     background-attachment: fixed;
+    overflow:hidden;
+}
 
+
+#comments {
+  background-color:#77D9C4;
+  opacity: 0.8;
+
+}
+
+#clickcomment {
+  position:relative;
+}
+
+.container {
+  position:relative;
 }
 
 
