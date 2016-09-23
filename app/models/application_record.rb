@@ -75,12 +75,17 @@ class ApplicationRecord < ActiveRecord::Base
   def self.user_rewards(user, projects)
     user_rewards_hash = {}
     projects.each do |project|
-      reward = Reward.where(project_id: project.id)
-      pledges = Pledge.where(user_id: user.id)
+      reward = Reward.find_by(project_id: project.id)
+      puts "this is the reward"
+      if reward == nil
+        user_rewards_hash = user_rewards_hash
+      else
+        pledges = Pledge.where(user_id: user.id)
 
-      pledges.each do |pledge|
-        if reward[0].project_id == pledge.project_id && pledge.amount >= reward[0].amount
-          user_rewards_hash[pledge.user_id] = reward[0].description
+        pledges.each do |pledge|
+          if reward.project_id == pledge.project_id && pledge.amount >= reward.amount
+            user_rewards_hash[pledge.user_id] = reward.description
+          end
         end
       end
     end

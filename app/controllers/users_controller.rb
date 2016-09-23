@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     @rewards = []
     @rewards_hash = Project.user_rewards(@user, projects)
     @rewards_hash.each do |key,value|
+      puts "this is the key: #{key}, and value: #{value}"
       if key == @user.id
         @rewards << value
       end
@@ -20,14 +21,14 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       redirect_to projects_path
-    else 
+    else
       render 'new'
     end
   end
 
-    private 
+    private
 
-    def user_params 
+    def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 end
