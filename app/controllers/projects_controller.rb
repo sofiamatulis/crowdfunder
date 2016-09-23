@@ -38,7 +38,7 @@ class ProjectsController < ApplicationController
   def create
     @project = @user.owned_projects.new(project_params)
 
-    if @project.save!
+    if @project.save
       flash[:sucess] = 'New Project succesfully added to Crowfunder'
       redirect_to project_url(@project)
     else
