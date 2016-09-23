@@ -14,6 +14,7 @@ $(document).on('turbolinks:load',function() {
       dataType: 'json'
     }).done(function(data){
       console.log(data);
+
       for(i = 0, l = data.projects.length; i < l; i++){
         $('<tr id="table'+i+'"">').appendTo('.categories-table')
         $('<td>').attr('class', 'name').html(data.projects[i]['name']).appendTo('#table'+i)
@@ -23,7 +24,7 @@ $(document).on('turbolinks:load',function() {
         $('<td>').attr('class', 'name').html(data.category['name']).appendTo('#table'+i)
         $('<td>').attr('class', 'name').html(data.projects[i]['description']).appendTo('#table'+i)
         $('<td>').attr('class', 'name').append($('<a>').attr('class', 'show-btn').attr('href', '/projects/' + (data.projects[i]['id'] ) ).html('Read More'))
-                                      .appendTo('#table'+i)
+                                       .appendTo('#table'+i)
         // $('<br>').appendTo('#table'+i)
       };
     }).fail(function(){
@@ -50,7 +51,7 @@ $(document).on('turbolinks:load',function() {
         return "100%"
       } else if(funded == 0){
         $('.progress-bar').css('color', 'black');
-        return "0"
+        return "0%"
       } else {
         $('.progress-bar').css('color', 'black');
 
