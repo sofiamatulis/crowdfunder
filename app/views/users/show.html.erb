@@ -49,7 +49,7 @@
 </table>
 
 <table class = "table user-pledges">
-  <h3> <%= "#{@user.name}'s Pledges"%> </h3>
+  <h3 class="tt"> <%= "#{@user.name}'s Pledges"%> </h3>
   <thead>
   <tr>
     <th>Amount</th>
@@ -58,7 +58,7 @@
   </tr>
   </thead>
 
-  <tbody>
+  <tbody class="pled">
     <% @user_pledges.each do |pledge| %>
     <tr>
       <td><%= pledge.amount %></td>
@@ -73,7 +73,7 @@
     <th>Description</th>
   </tr>
   </thead>
-  <tbody>
+  <tbody class="rew">
     <% @rewards.each do |reward| %>
     <tr>
       <td><%= reward %> </td>
