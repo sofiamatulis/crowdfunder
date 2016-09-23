@@ -1,10 +1,15 @@
-<%= form_for(project) do |f| %>
-  <% if project.errors.any? %>
+<body class="picture">
+
+  <body class = "log-in">
+    <div class="log-in-form">
+
+<%= form_for @project do |f| %>
+  <% if @project.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
       <ul>
-      <% project.errors.full_messages.each do |message| %>
+      <% @project.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -36,7 +41,24 @@
     <%= f.select :category_id,  options_for_select(@categories.collect{ |n| [n.name, n.id] }), :prompt => 'Select One' %>
   </div>
 
-  <div class="actions"><br/>
-    <%= f.submit class: 'btn btn-default'%>
-  </div>
-<% end %>
+  <body class="reward"
+
+    <h3>Rewards</h3>
+    <div id = 'rewards'>
+      <%= f.fields_for :rewards do |reward| %>
+        <%= render 'reward_fields', :f => reward  %>
+      <% end %>
+      <div class = 'links'>
+        <%= link_to_add_association 'add task', f, :rewards %>
+      </div>
+    </div>
+
+
+      <%= f.submit 'Save' %>
+
+  <% end %>
+
+</body>
+</div>
+
+</body>

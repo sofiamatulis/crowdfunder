@@ -39,4 +39,44 @@ class ApplicationRecord < ActiveRecord::Base
     end
   end
 
+  def self.destroy_pledges(project_id)
+    pledges = self.where(project_id: project_id)
+    pledges.each do |pledge|
+      pledge.destroy
+    end
+  end
+
+  def self.count(project_id)
+    pledges = Pledge.where(project_id: project_id)
+    count = 0
+    pledges.each do |pledge|
+      puts pledge
+      count += pledge.amount
+    end
+    return count
+  end
+  
+  def self.find_rewards(project_id)
+    self.where(project_id: project_id)
+  end
+
+  def self.reached_goal?(project)
+    target_goal = project.goal
+    total_raised = self.count(project.id)
+    if total_raised >= target_goal
+      return true
+    end
+    while self.get_countdown_time(project) != 'The Project is Expired'
+      return "there is still time"
+    end
+    return false
+  end
+
+
 end
+
+
+
+
+
+

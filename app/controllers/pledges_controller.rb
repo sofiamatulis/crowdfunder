@@ -1,4 +1,5 @@
 class PledgesController < ApplicationController
+  before_action :ensure_logged_in
   def new
     @project = Project.find(params[:project_id])
     @pledge = Pledge.new
@@ -14,6 +15,12 @@ class PledgesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @project = Project.find(params[:project_id])
+    @pledge = @project.pledges 
+    @pledge.destroy
   end
 
   private

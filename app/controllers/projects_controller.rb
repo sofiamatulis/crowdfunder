@@ -1,20 +1,13 @@
 class ProjectsController < ApplicationController
+  before_action :ensure_logged_in, only: [:new, :edit, :create, :update, :destroy]
   before_action :set_project, only: [:show, :edit, :update, :destroy]
   before_action :set_user
   before_action :set_cat
 
-  # GET /projects
-  # GET /projects.json
 
   def index
     @projects = Project.all
     @categories = Category.all
-    # @categories_projects = {}
-    # @categories.each do |category|
-    #   @categories_projects[category] = []
-    # end
-
-
     if params[:search]
       @projects = Project.search(params[:search]).order("created_at DESC")
     else
@@ -22,49 +15,37 @@ class ProjectsController < ApplicationController
     end
   end
 
-  # GET /projects/1
-  # GET /projects/1.json
   def show
     @pledge = Pledge.new
     @project = Project.find(params[:id])
+    @count = Pledge.count(@project)
+    @rewards = Reward.find_rewards(@project.id)
+    if Project.reached_goal?(@project) == false
+      Pledge.destroy_pledges(@project)
+    end
 
   end
 
-  # GET /projects/new
   def new
     @project = Project.new
+    @project.rewards.build
+    @reward = Reward.new
   end
 
-  # GET /projects/1/edit
   def edit
-
   end
 
-  # POST /projects
-  # POST /projects.json
   def create
     @project = @user.owned_projects.new(project_params)
-    #@project = Project.new(project_params)
 
-    if @project.save
+    if @project.save!
       flash[:sucess] = 'New Project succesfully added to Crowfunder'
       redirect_to project_url(@project)
     else
       render :new
     end
-    # respond_to do |format|
-    #   if @project.save
-    #     format.html { redirect_to @project, notice: 'Project was successfully created.' }
-    #     format.json { render :show, status: :created, location: @project }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @project.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
-  # PATCH/PUT /projects/1
-  # PATCH/PUT /projects/1.json
   def update
 
     @project.update_attributes(project_params)
@@ -74,36 +55,26 @@ class ProjectsController < ApplicationController
     else
       render :edit
     end
-
-    # respond_to do |format|
-    #   if @project.update(project_params)
-    #     format.html { redirect_to @project, notice: 'Project was successfully updated.' }
-    #     format.json { render :show, status: :ok, location: @project }
-    #   else
-    #     format.html { render :edit }
-    #     format.json { render json: @project.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
+<<<<<<< HEAD
   def search
   @projects = Project.search(params[:search])
   end
 
   # DELETE /projects/1
   # DELETE /projects/1.json
+=======
+>>>>>>> master
   def destroy
     @project.destroy
     flash[:notice] = "Project is destroyed"
     redirect_to projects_url
-    # respond_to do |format|
-    #   format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
-    #   format.json { head :no_content }
-    # end
   end
 
+
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_user
       @user =  current_user
     end
@@ -113,8 +84,8 @@ class ProjectsController < ApplicationController
     def set_cat
       @categories = Category.all
     end
-    # Never trust parameters from the scary internet, only allow the white list through.
+
     def project_params
-      params.require(:project).permit(:name, :date, :goal, :user_id, :category_id, :description)
+      params.require(:project).permit(:name, :date, :goal, :user_id, :category_id, :description, rewards_attributes:[:amount, :description, :_destroy])
     end
 end

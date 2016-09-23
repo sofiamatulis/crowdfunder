@@ -1,9 +1,12 @@
 // Place all the styles related to the Projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.progress-bar{
+  width: 10%;
+}
 
 
-html {
+.people {
     background-image: url('crowd.png');
 }
 
@@ -13,4 +16,148 @@ html {
   font-family: 'Muli', sans-serif;
   // color:gray;
   color:#015249;
+}
+
+
+.search {
+  text-align: center;
+    font-family: 'Muli', sans-serif;
+    margin-left: -400px;
+}
+//
+// .name {
+//   text-align:center;
+//   font-family: 'Muli', sans-serif;
+//   // color:gray;
+//   color:#015249;
+//   width:100%;
+//   display:inline-block;
+//   position:relative;
+//   margin-left: 300px;
+//
+// }
+//
+//
+//
+//
+//
+//
+// .name {
+//   position: relative;
+//   margin: 15px;
+// }
+//
+// tr {
+//   position: relative;
+//   list-style: none;
+//   overflow: hidden;
+//   // width: 350px;
+//     width:100%;
+//   height: 300px;
+//   display: inline-block;
+//   margin: 5px, 0, 5px, 0;
+//   font-family: 'Muli', sans-serif;
+//
+// }
+//
+//
+// tr {
+//   text-align:center;
+//   // color:gray;
+//   color:#015249;
+//
+//
+// }
+//
+// th {
+//   text-align: center;
+//   height:50px;
+// }
+//
+//
+//
+//
+h1 {
+  text-align:center;
+  font-family: 'Muli', sans-serif;
+  // color:gray;
+  color:#015249;
+}
+
+.thumbnail {
+  text-align:center;
+}
+
+#clickpledge {
+  text-align:center;
+}
+
+
+#expire {
+  text-align:center;
+  color:red;
+}
+
+
+.picture {
+  background-image: url('crowd.png');
+
+}
+
+
+.show, .thumbnail{
+  // margin:auto;
+  // margin-top: 8%;
+  // margin-bottom: 70px;
+  // width: 300px;
+  // padding: 50px 30px;
+  background-color:#77D9C4;
+  opacity: 0.8;
+
+
+}
+
+.container {
+  text-align:center;
+}
+
+
+.panel-default {
+  width:20%;
+  margin-left:450px;
+
+}
+
+.progress {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+#styling {
+  color:#015249;
+  background-color:#77D9C4;
+  opacity:0.8;
+}
+
+
+
+.showpledge {
+  background-color:white;
+  opacity:0.7;
+}
+
+.reward {
+  background-color:#77D9C4;
+  opacity: 0.8;
+
+}
+
+h3  {
+  background-color:#77D9C4;
+  opacity: 0.8;
+
+}
+#rew {
+  background-color:#77D9C4;
+
 }
