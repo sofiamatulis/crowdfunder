@@ -1,5 +1,7 @@
 $(function() {
 
+  console.log( 'INSIDE ALT DOC READY' ); /// TEMP
+
   // this ajax request will get the information from categories json file
   $('.category').on('click', function(event){
     var categoryId = $(this).attr("value")
@@ -33,13 +35,27 @@ $(function() {
 
   });
   // Calculation for progressbar
-
-  $('.progressbar').load(function(){
-    var funded = parseInt($('#fund').text());
+ console.log('hi');
+  // $('.progressbar').ready(function(){
+    var funded = parseInt($('#funded').text());
     var goal   = parseInt($('#goal').text());
-    var final  = ( funded / goal) * 100;
+    var final  = Math.floor((( funded / goal) * 100));
 
-    $('.progressbar').attr('aria-valuenow', final);
+    console.log(final);
 
-  })
+    var check  = function(){
+      if (funded >= goal) {
+        return "100%"
+      } else {
+        return ' " '+ final + '%" '
+      }
+    }
+    console.log(check());
+    // $('.progressbar').attr('aria-valuenow', '"'+final+'"');
+    $('.progress-bar').attr('test', check());
+    $('.progress-bar').css('width', check());
+    $('.progress-bar').text(check());
+
+
+  // })
 });
