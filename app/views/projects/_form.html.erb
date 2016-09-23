@@ -41,6 +41,8 @@
     <%= f.select :category_id,  options_for_select(@categories.collect{ |n| [n.name, n.id] }), :prompt => 'Select One' %>
   </div>
 
+  <body class="reward"
+
     <h3>Rewards</h3>
     <div id = 'rewards'>
       <%= f.fields_for :rewards do |reward| %>
@@ -55,6 +57,7 @@
       <%= f.submit 'Save' %>
 
   <% end %>
+
 </body>
 </div>
 

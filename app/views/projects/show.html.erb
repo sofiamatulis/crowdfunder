@@ -70,9 +70,12 @@
 </div>
 </body>
 
-
+<body class="reward">
 <% @rewards.each do |reward| %>
   <h3>Rewards</h3>
+  <div style="background-color:rgba(119,217,196,0.8);">
   <%= "Amount: #{reward.amount}" %> <br>
-  <%= "description: #{reward.description}" %>
+  <%= "Description: #{reward.description}" %>
+</div>
 <% end %>
+</body>
