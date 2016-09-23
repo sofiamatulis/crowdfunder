@@ -49,7 +49,7 @@
     <% @projects.each do |project| %>
       <tr>
         <td><%= link_to "#{project.name}", project_path(project)%></td>
-        <td><%= project.date%></td>
+        <td><%= project.date.strftime("%d/%m/%y - %I:%M:%S %p")%></td>
         <td><%= project.goal %></td>
         <td><%= project.user.name %></td>
         <td><%= project.category.name %></td>
