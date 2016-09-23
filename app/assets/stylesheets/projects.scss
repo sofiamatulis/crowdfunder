@@ -10,7 +10,19 @@
     background-image: url('crowd.png');
     //  background-repeat: repeat-x;
     background-position: absolute;
+    overflow:hidden;
 
+
+
+
+}
+
+#clickcomment {
+  position:relative;
+}
+
+.container {
+  position:relative;
 }
 
 
