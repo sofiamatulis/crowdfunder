@@ -60,7 +60,7 @@
 
   <tbody class="pled">
     <% @user_pledges.each do |pledge| %>
-    <tr>
+    <tr class="rew">
       <td><%= pledge.amount %></td>
       <td><%= Project.find(pledge.project_id).name %></td>
     <% end %>
@@ -70,7 +70,7 @@
   <h3>Rewards</h3>
   <thead>
   <tr>
-    <th>Description</th>
+    <th class="rew">Description</th>
   </tr>
   </thead>
   <tbody class="rew">
