@@ -33,7 +33,6 @@
     </tr>
   </thead>
 
-<<<<<<< HEAD
 
   <div class="search">
     <%= form_tag(projects_path, :method => "get", id: "search-form", class: "form-group")  do %>
@@ -48,13 +47,10 @@
     <% end %>
 </section>
 
-=======
->>>>>>> master
   <tbody class = 'categories-table'>
   </tbody>
 
   <tbody class = "all-projects-table-body">
->>>>>>> master
     <% @projects.each do |project| %>
       <tr>
         <td><%= link_to "#{project.name}", project_path(project)%></td>

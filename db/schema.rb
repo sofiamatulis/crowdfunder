@@ -66,8 +66,11 @@ ActiveRecord::Schema.define(version: 20160923150905) do
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.datetime "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.string   "uid"
   end
 
 end

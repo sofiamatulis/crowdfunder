@@ -57,15 +57,14 @@ class ProjectsController < ApplicationController
     end
   end
 
-<<<<<<< HEAD
+
   def search
   @projects = Project.search(params[:search])
   end
 
   # DELETE /projects/1
   # DELETE /projects/1.json
-=======
->>>>>>> master
+
   def destroy
     @project.destroy
     flash[:notice] = "Project is destroyed"
