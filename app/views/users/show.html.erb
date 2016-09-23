@@ -66,6 +66,19 @@
     <% end %>
     </tr>
   </tbody>
-
-
+<table>
+  <h3>Rewards</h3>
+  <thead>
+  <tr>
+    <th>Description</th>
+  </tr>
+  </thead>
+  <tbody>
+    <% @rewards.each do |reward| %>
+    <tr>
+      <td><%= reward %> </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 </body>
