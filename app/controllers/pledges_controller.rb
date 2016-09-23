@@ -17,6 +17,12 @@ class PledgesController < ApplicationController
     end
   end
 
+  def destroy
+    @project = Project.find(params[:project_id])
+    @pledge = @project.pledges 
+    @pledge.destroy
+  end
+
   private
 
   def pledge_params
