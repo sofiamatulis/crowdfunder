@@ -1,7 +1,9 @@
 // Place all the styles related to the Projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+.progress-bar{
+  width: 10%;
+}
 
 
 .people {
@@ -124,4 +126,15 @@ h1 {
   width:20%;
   margin-left:450px;
 
+}
+
+.progress {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+#styling {
+  color:#015249;
+  background-color:#77D9C4;
+  opacity:0.8;
 }
