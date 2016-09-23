@@ -87,8 +87,8 @@
 <div id = "comments">
 <p>
   <h3>Comments:</h3>
-<% @project.comments.each do |comment| %> 
-  <p> 
+<% @project.comments.each do |comment| %>
+  <p>
   <%= comment.user.name %> <br>
   <%= comment.head %> :
   <%= comment.body %>
@@ -104,4 +104,3 @@
 </div>
 
 </body>
-
