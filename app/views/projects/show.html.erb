@@ -2,7 +2,7 @@
 
 
 <%= link_to 'Back to Projects', projects_path %>
-<% if current_user %>
+<% if current_user == @project.id %>
 | <%= link_to 'Edit Current Project', edit_project_path(@project) %>
 <% end %>
 
@@ -69,8 +69,10 @@
 <%# javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </div>
 </body>
-<div id= 'pledge' </div>
+
 
 <% @rewards.each do |reward| %>
-  <%= reward.amount %>
+  <h3>Rewards</h3>
+  <%= "Amount: #{reward.amount}" %> <br>
+  <%= "description: #{reward.description}" %>
 <% end %>
