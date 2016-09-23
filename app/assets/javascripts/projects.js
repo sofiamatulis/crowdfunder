@@ -22,7 +22,7 @@ $(function() {
         $('<td>').attr('class', 'name').html(data[i]['user_id']).appendTo('.categories-table')
         $('<td>').attr('class', 'name').html(data[i]['category_id']).appendTo('.categories-table')
         $('<td>').attr('class', 'name').html(data[i]['description']).appendTo('.categories-table')
-        $('<a>').attr('class', 'show-btn').attr('href', '/projects/' + (data[i]['id'] +1) ).html('show').appendTo('.categories-table')
+        $('<a>').attr('class', 'show-btn').attr('href', '/projects/' + (data[i]['id'] +1) ).html('Read More').appendTo('.categories-table')
         $('<br>').appendTo('.categories-table')
       };
     }).fail(function(){
@@ -35,7 +35,7 @@ $(function() {
 
   });
   // Calculation for progressbar
- console.log('hi');
+ // console.log('hi');
   // $('.progressbar').ready(function(){
     var funded = parseInt($('#funded').text());
     var goal   = parseInt($('#goal').text());
@@ -50,7 +50,7 @@ $(function() {
         return ' " '+ final + '%" '
       }
     }
-    console.log(check());
+    // console.log(check());
     // $('.progressbar').attr('aria-valuenow', '"'+final+'"');
     $('.progress-bar').attr('test', check());
     $('.progress-bar').css('width', check());
