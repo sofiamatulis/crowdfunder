@@ -22,7 +22,7 @@
 
             <p>
               <strong>Fund Goal:</strong>
-              <%= @project.goal %>
+              <span id="goal"><%= @project.goal %></span>
             </p>
 
             <p>
@@ -43,14 +43,14 @@
 
             <p>
               <strong>Funding:</strong>
-              <%= @count %>
+              <span id='funded'><%= @count %></span>
             </p>
 
           </div>
                 <h4> Funded </h4>
 
               <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                <div class="progress-bar" id='progressbar' role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" >
                   60%
                 </div>
 
@@ -74,6 +74,3 @@
 <% @rewards.each do |reward| %>
   <%= reward.amount %>
 <% end %>
-
-
-
