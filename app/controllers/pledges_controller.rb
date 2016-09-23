@@ -1,4 +1,5 @@
 class PledgesController < ApplicationController
+  before_action :ensure_logged_in
   def new
     @project = Project.find(params[:project_id])
     @pledge = Pledge.new
